@@ -1,0 +1,52 @@
+body {
+  background: white url('./img/bg3.jpg') no-repeat center center/cover;
+  /* background: linear-gradient(90deg, black 38.3%, rgba(0, 0, 0, 0) 38.3%), url('./img/owl.png') no-repeat; */
+  /* background: linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 30%), url('./img/owl.png'); */
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.button{
+  color:#C4C4C4
+}
+
+.sign-out{
+  position: absolute;
+  width: 146px;
+  height: 38px;
+  right: 4%;
+  top: 27px;
+}
+
+.home{
+  position: absolute;
+  width: 146px;
+  height: 38px;
+  left: 768px;
+  top: 28px;
+}
+.list{
+  position: absolute;
+  width: 146px;
+  height: 38px;
+  left: 587px;
+  top: 28px;
+}
+
+/* .container{
+  background: black;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin: auto;
+  height: 1024;
+  width: 522;
+  position: relative;
+  transform: scale(1);
+} */
