@@ -10,7 +10,7 @@ class App extends Component {
           fsdfgsdgfdsfs
         </div> */}
         <button className = "button sign-out">sign out</button>
-        <button className = "button home">home</button>
+        <button className = "button home">bitch</button>
         <button className = "button list">list</button>
 
 
