@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&display=swap");
+
 body {
   background: white url('./img/bg3.jpg') no-repeat center center/cover;
   /* background: linear-gradient(90deg, black 38.3%, rgba(0, 0, 0, 0) 38.3%), url('./img/owl.png') no-repeat; */
   /* background: linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 30%), url('./img/owl.png'); */
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Aldrich';
   min-height: 100vh;
   overflow: hidden;
   display: flex;
@@ -13,6 +15,7 @@ body {
 }
 
 .button{
+  font-family: 'Aldrich';
   color:#C4C4C4
 }
 
@@ -28,17 +31,56 @@ body {
   position: absolute;
   width: 146px;
   height: 38px;
-  left: 768px;
-  top: 28px;
+  left: 39%;
+  top: 27px;
 }
+
 .list{
   position: absolute;
   width: 146px;
   height: 38px;
-  left: 587px;
-  top: 28px;
+  left: 51%;
+  top: 27px;
 }
 
+label {
+  position: absolute;
+  text-align: right;
+  /* width: px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  /* height: 36px; */
+  /* margin-bottom: 100px; */
+}
+
+
+/*  */
+.cat1 {
+  flex: 0 0 200px;
+  left: 20px;
+  top: 190px;
+}
+
+.cat2 {
+  flex: 0 0 200px;
+  left: 20px;
+  top: 253px;
+}
+
+.cat3{
+  flex: 0 0 200px;
+  left: 20px;
+  top: 316px;
+}
+
+select {
+  /* height: 20px; */
+  width: 200px;
+  /* flex: 0 0 200px; */
+  margin-left: 30px;
+}
 /* .container{
   background: black;
   display: flex;
