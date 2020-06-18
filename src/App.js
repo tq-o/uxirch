@@ -66,7 +66,7 @@ class App extends Component {
                 <option value="mango">Mango</option>
               </select>
             </label>
-            <input type="submit" value="Submit" />
+            <input className = "submit" type="submit" value="Submit" />
           </form>
         </div>
 
