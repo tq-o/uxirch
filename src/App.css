@@ -55,6 +55,15 @@ label {
   /* margin-bottom: 100px; */
 }
 
+.rectangle {
+  display: flex;
+  background: black;
+  position: absolute;
+  width: 522px;
+  height: 1024px;
+  left: 0px;
+  top: 0px;
+}
 
 /*  */
 .cat1 {
@@ -92,15 +101,47 @@ select {
   left: 173px;
   top: 454px;
   font-family: 'Aldrich';
+  align-content: center;
 }
-/* .container{
-  background: black;
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  margin: auto;
-  height: 1024;
-  width: 522;
-  position: relative;
-  transform: scale(1);
-} */
+
+.btn {
+  /* display:block; */
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 476px;
+  top: 187px;
+  /* background: transparent; */
+  /* border-radius: 50%; */
+  
+}
+
+.disclaimer{
+  position: absolute;
+  font-family: 'Aldrich';
+  /* padding: 0px; */
+  /* width: 144px;
+  height: 39px; */
+  left: 10px;
+  top: 510px;
+  text-align: center;
+
+}
+
+.header {
+  position: absolute;
+  width: 115px;
+  height: 14px;
+  left: 20px;
+  top: 155px;
+
+  font-family: Aldrich;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  /* identical to box height */
+
+
+  color: #FFFFFF;
+}
+
