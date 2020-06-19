@@ -16,7 +16,14 @@ body {
 
 .button{
   font-family: 'Aldrich';
-  color:#C4C4C4
+  color:#C4C4C4;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  
+}
+.button2:hover {
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .sign-out{
@@ -29,7 +36,7 @@ body {
 
 .home{
   position: absolute;
-  width: 146px;
+  width: 10.1%;
   height: 38px;
   left: 39%;
   top: 27px;
@@ -59,6 +66,9 @@ label {
   display: flex;
   background: black;
   position: absolute;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
   width: 522px;
   height: 1024px;
   left: 0px;
@@ -128,13 +138,10 @@ select {
 
 }
 
-.header {
+header {
   position: absolute;
-  width: 115px;
-  height: 14px;
-  left: 20px;
-  top: 155px;
-
+  /* left: 173px;*/
+  top: 100px;
   font-family: Aldrich;
   font-style: normal;
   font-weight: normal;

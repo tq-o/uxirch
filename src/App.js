@@ -6,9 +6,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cat1: "coconut",
-      cat2: "coconut",
-      cat3: "coconut",
+      cat1: "grapefruit",
+      cat2: "grapefruit",
+      cat3: "grapefruit",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -41,12 +41,13 @@ class App extends Component {
     return (
       <body>
         {/* <div className="rectangle" /> */}
-        <button className="button sign-out">
+        <button className="button sign-out button2">
           <span>sign out</span>
         </button>
-        <button className="button home">home</button>
-        <button className="button list">list</button>
+        <button className="button home button2">home</button>
+        <button className="button list button2">list</button>
           <div className="rectangle">
+            <header>Option Screen</header>
             <img
               className="btn"
               onMouseOver={this.mouseOver}
@@ -94,8 +95,8 @@ class App extends Component {
                   <option value="mango">Mango</option>
                 </select>
               </label>
-              <input className="submit" type="submit" value="Submit" />
-              <text className="disclaimer">Disclaimer: We love sloths</text>
+              <input className="submit button2" type="submit" value="Submit" />
+              <i className="disclaimer">Disclaimer: We love sloths</i>
             </form>
           </div>
       </body>
