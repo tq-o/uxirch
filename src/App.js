@@ -1,24 +1,15 @@
 import React, { Component } from 'react'
 import './App.css';
-// import owl from './owl.gif'
+import apple from './apple';
+import axios from "axios";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+
+
+import button from './img/forgot-password-button.png';
+import circle from './img/circle.png';
+
+
 class App extends Component {
-<<<<<<< Updated upstream
-  render(){
-    return (
-      
-      <body>
-        {/* <div className = "container" id ="container">
-          fsdfgsdgfdsfs
-        </div> */}
-        <button className = "button sign-out">sign out</button>
-        <button className = "button home">home</button>
-        <button className = "button list">list</button>
-
-
-      </body>
-      
-=======
-
   constructor(props) {
     super(props)
     this.state = {userN: '', userP: ''};
@@ -40,47 +31,57 @@ class App extends Component {
   render(){
     return (
 
+      <Router>
+      <Route path="/" render={(props) => (
+      <React.Fragemnt>
+
       <body>
+      
+      <div className = "container">
+        
+        <img className = "circleImage" src = {circle} alt="alternatetext"></img>
 
-        <div className = "container" >
-          
-          <img className = "circleImage" src = {circle} alt="alternatetext"></img>
+        <a style = {{backgroundColor: 'transparent', border: 'none'}}href="">
+        <img className = "image" src = {button} alt="alternatetext"></img>
+        </a>
 
-          <a style = {{backgroundColor: 'transparent', border: 'none'}}href="">
-          <img className = "image" src = {button} alt="alternatetext"></img>
-          </a>
+        <form onSubmit = {this.handleSubmit}> 
 
-          <form onSubmit = {this.handleSubmit}> 
+        <input 
+        name = "userN"
+        userN = {this.state.userN}
+        onChange = {this.handleChange}
+        className = "enterUserName" 
+        placeholder = "username">
+        </input>
 
-          <input 
-          name = "userN"
-          userN = {this.state.userN}
-          onChange = {this.handleChange}
-          className = "enterUserName" 
-          placeholder = "username">
-          </input>
+        <input 
+        name = "userP"
+        userP = {this.state.userP}
+        onChange = {this.handleChange}
+        className = "enterPassword" 
+        placeholder = "password">
+        </input>
 
-          <input 
-          name = "userP"
-          userP = {this.state.userP}
-          onChange = {this.handleChange}
-          className = "enterPassword" 
-          placeholder = "password">
-          </input>
+        <Link to="/apple">
+        <button 
+        type = "submit"
+        className = "button sign-in">sign in
+        </button>
+        </Link>
 
-          <button 
-          type = "submit"
-          className = "button sign-in">sign in
-          </button>
 
-          </form>
-
+        </form>
         </div>
- 
       </body>
->>>>>>> Stashed changes
-    );
-  }
+
+      </React.Fragemnt>)} />
+      <Route path ="/apple" component = {apple} />
+      </Router>
+      
+);
 }
+}
+
 
 export default App;
