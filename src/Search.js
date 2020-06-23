@@ -39,7 +39,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div className = "body2">
+      <body className = "body2">
         {/* <div className="rectangle" /> */}
         <button className="button sign-out button2">
           <span>sign out</span>
@@ -99,7 +99,7 @@ class Search extends Component {
               <i className="disclaimer">Disclaimer: We love sloths</i>
             </form>
           </div>
-      </div>
+      </body>
     );
   }
 }
