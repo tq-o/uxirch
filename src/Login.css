@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css2?family=Aldrich&display=swap%22);
+
+body {
+  height: 100%;
+  margin: 0;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+}
+.body1 {
+  background: url('./img/background1.png') no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+    /* The image used */
+
+      /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 300px;
+  width: 700px;
+  position: relative;
+  transform: scale(1);
+}
+
+.enterUserName{
+  font-family: 'Aldrich';
+
+  width: 400px;
+  height: 60px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.enterPassword{
+  font-family: 'Aldrich';
+
+  width: 400px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sign-in{
+  position: absolute;
+  width: 138px;
+  height: 46px;
+  top: 80%;
+  left: 50%;
+  background: #5c93ff;
+  transform: translate(-50%, -50%);
+}
+
+.image{
+  height: 25%;
+  width: 10%;
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

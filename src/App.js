@@ -1,21 +1,18 @@
-import React, { Component } from 'react'
-import './App.css';
-// import owl from './owl.gif'
+import React, { Component } from "react";
+// import "./App.css";
+import Search from "./Search";
+import Login from "./Login"
+// import axios from "axios";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+
 class App extends Component {
-  render(){
+  render() {
     return (
-      
-      <body>
-        {/* <div className = "container" id ="container">
-          fsdfgsdgfdsfs
-        </div> */}
-        <button className = "button sign-out">sign out</button>
-        <button className = "button home">home</button>
-        <button className = "button list">list</button>
-
-
-      </body>
-      
+      <Router>
+        <Route exact path="/" component = {Login}/>
+        <Route exact path="/search" component={Search} />
+      </Router>
     );
   }
 }
