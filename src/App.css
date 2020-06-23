@@ -80,8 +80,10 @@ body {
   position: absolute;
   width: 138px;
   height: 46px;
-  top: 70%;
+  top: 80%;
+  left: 50%;
   background: #5c93ff;
+  transform: translate(-50%, -50%);
 }
 
 .image{
