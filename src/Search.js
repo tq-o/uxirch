@@ -96,8 +96,13 @@ class Search extends Component {
                 </select>
               </label>
               <input className="submit button2" type="submit" value="Submit" />
-              <i className="disclaimer">Disclaimer: We love sloths</i>
+              {/* <i className="disclaimer">Disclaimer: We love sloths</i> */}
+              <script type="text/javascript" src="/eel.js"></script>
+              <script className="disclaimer">
+                  eel.get_recommendations('DOOM');
+              </script>
             </form>
+            
           </div>
       </body>
     );
