@@ -30,12 +30,12 @@ def get_recommendations(name, consine_sim = cosine_sim):
 
 
     game = [i[0] for i in sim_scores]
-    return metadata['name'].iloc[game]
+    return print(metadata['name'].iloc[game])
 
 if __name__ == "__main__":
     app.run(debug=True)
 
 #eel.start('Search.html')
 
-# print(get_recommendations('DOOM'))
+#print(get_recommendations('DOOM'))
 
