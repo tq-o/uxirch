@@ -18,21 +18,26 @@ cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 
 indices = pd.Series(metadata.index, index = metadata['name']).drop_duplicates()
 
-def get_recommendations(name):
+def get_recommendations(name, cosine_sim = cosine_sim):
     idx = indices[name]
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse = True)
-    # sim_scores = sim_scores[1:11]
-    sim_scores = sim_scores[1]
+    sim_scores = sim_scores[1:11]
+    # sim_scores = sim_scores[1]
 
 
     game = [i[0] for i in sim_scores]
-    return metadata['name'].iloc[game]
+    res = metadata['name'].iloc[game]
+    temp = []
+    for ele in res:
+        temp.append(ele)
+    return temp
+    # return metadata['name'].iloc[game]
 
 @app.route("/")
 #@eel.expose
 def print_out():
-    return get_recommendations("DOOM")
+    return str(get_recommendations("DOOM"))
 
 
 if __name__ == "__main__":
