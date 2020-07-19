@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import './Result.css'
 
@@ -19,8 +19,8 @@ class Result extends Component {
     }
 }
 
-Result.PropTypes = {
-    closeCallback: React.PropTypes.func.isRequired
+Result.propTypes = {
+    closeCallback: propTypes.func.isRequired
   }
 
 export default Result;

@@ -1,7 +1,7 @@
-import React, { Component } from "react";;
+import React, { Component } from "react";
 import "./Search.css";
 import instbtn from "./img/inst-btn.png";
-import resultGame from "./Result";
+import Result from "./Result.js"
 
 class Search extends Component {
   constructor(props) {
@@ -10,9 +10,7 @@ class Search extends Component {
       cat1: "grapefruit",
       cat2: "grapefruit",
       cat3: "grapefruit",
-      // resultOpen: false,
     };
-
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,16 +40,18 @@ class Search extends Component {
     alert("Hi");
   }
 
-  openResult(){
+  openResult(event){
     this.setState({resultOpen:true})
   }
-  closeResult(){
+
+  closeResult(event){
     this.setState({resultOpen:false})
   }
 
   render() {
     return (
-      <body className = "body2" >
+      <body className = "body2">
+        {/* <div className="rectangle" /> */}
         <button className="button sign-out button2">
           <span>sign out</span>
         </button>
@@ -60,9 +60,13 @@ class Search extends Component {
           <div className="rectangle">
             <header>Option Screen</header>
 
-            isOpen = {this.state.resultOpen}
-            closeCallback = {this.closeResult.bind(this)}
-            <resultGame closeCallback = {this.closeResult.bind(this)}/>
+            <div className = "resultRectangle" 
+              isOpen = {this.state.resultOpen}
+              closeCallback = {this.closeResult.bind(this)}>
+              <Result closeCallback = {this.closeResult.bind(this)}/>
+            </div>
+
+            
 
             <img
               className="btn"
@@ -112,15 +116,9 @@ class Search extends Component {
                 </select>
               </label>
               <input className="submit button2" type="submit" value="Submit" />
-              {/* <i className="disclaimer">Disclaimer: We love sloths</i> */}
-              {/* <script type="text/javascript" src="/eel.js"></script>
-              <script className="disclaimer">
-                  eel.get_recommendations('DOOM');
-              </script> */}
+              <i className="disclaimer">Disclaimer: We love sloths</i>
             </form>
           </div>
-
-
       </body>
     );
   }
