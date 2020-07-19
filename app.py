@@ -1,4 +1,4 @@
-#import eel
+
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
@@ -23,7 +23,6 @@ def get_recommendations(name, cosine_sim = cosine_sim):
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse = True)
     sim_scores = sim_scores[1:11]
-    # sim_scores = sim_scores[1]
 
 
     game = [i[0] for i in sim_scores]
@@ -32,10 +31,10 @@ def get_recommendations(name, cosine_sim = cosine_sim):
     for ele in res:
         temp.append(ele)
     return temp
-    # return metadata['name'].iloc[game]
+    
 
 @app.route("/")
-#@eel.expose
+
 def print_out():
     return str(get_recommendations("DOOM"))
 

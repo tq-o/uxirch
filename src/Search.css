@@ -165,7 +165,14 @@ header {
   font-weight: normal;
   font-size: 40px;
   /* identical to box height */
-
-
   color: #FFFFFF;
+}
+
+.rectangleResult{
+ position: fixed;
+ left: 0;
+ top:0;
+ transform: translated3d(-100vw,0,0);
+ width: 100vw; /*vw = viewerport width */
+ height: 100vh;
 }

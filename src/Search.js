@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from "react";;
 import "./Search.css";
 import instbtn from "./img/inst-btn.png";
+import resultGame from "./Result";
 
 class Search extends Component {
   constructor(props) {
@@ -9,11 +10,15 @@ class Search extends Component {
       cat1: "grapefruit",
       cat2: "grapefruit",
       cat3: "grapefruit",
+      // resultOpen: false,
     };
+
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.mouseOver = this.mouseOver.bind(this);
+    this.openResult = this.openResult.bind(this);
+    this.closeResult = this.closeResult.bind(this);
   }
 
   handleChange(event) {
@@ -37,10 +42,16 @@ class Search extends Component {
     alert("Hi");
   }
 
+  openResult(){
+    this.setState({resultOpen:true})
+  }
+  closeResult(){
+    this.setState({resultOpen:false})
+  }
+
   render() {
     return (
-      <body className = "body2">
-        {/* <div className="rectangle" /> */}
+      <body className = "body2" >
         <button className="button sign-out button2">
           <span>sign out</span>
         </button>
@@ -48,6 +59,11 @@ class Search extends Component {
         <button className="button list button2">list</button>
           <div className="rectangle">
             <header>Option Screen</header>
+
+            isOpen = {this.state.resultOpen}
+            closeCallback = {this.closeResult.bind(this)}
+            <resultGame closeCallback = {this.closeResult.bind(this)}/>
+
             <img
               className="btn"
               onMouseOver={this.mouseOver}
@@ -102,8 +118,9 @@ class Search extends Component {
                   eel.get_recommendations('DOOM');
               </script> */}
             </form>
-            
           </div>
+
+
       </body>
     );
   }

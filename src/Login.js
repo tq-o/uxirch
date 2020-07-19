@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./Login.css";
-// import axios from "axios";
 import { Link } from "react-router-dom";
-
 import button from "./img/forgot-password-button.png";
 import circle from "./img/circle.png";
 
