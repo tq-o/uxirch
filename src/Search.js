@@ -1,22 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, useContext} from "react";
 import "./Search.css";
 import instbtn from "./img/inst-btn.png";
-import Result from "./Result.js"
+import Answer from './Answer';
+import {Transition,animated} from 'react-spring'
 
 class Search extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
       cat1: "grapefruit",
       cat2: "grapefruit",
       cat3: "grapefruit",
+      resultOpen: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.mouseOver = this.mouseOver.bind(this);
-    this.openResult = this.openResult.bind(this);
-    this.closeResult = this.closeResult.bind(this);
   }
 
   handleChange(event) {
@@ -40,15 +41,11 @@ class Search extends Component {
     alert("Hi");
   }
 
-  openResult(event){
-    this.setState({resultOpen:true})
-  }
 
-  closeResult(event){
-    this.setState({resultOpen:false})
-  }
 
   render() {
+
+
     return (
       <body className = "body2">
         {/* <div className="rectangle" /> */}
@@ -57,17 +54,10 @@ class Search extends Component {
         </button>
         <button className="button home button2">home</button>
         <button className="button list button2">list</button>
+
           <div className="rectangle">
             <header>Option Screen</header>
-
-            <div className = "resultRectangle" 
-              isOpen = {this.state.resultOpen}
-              closeCallback = {this.closeResult.bind(this)}>
-              <Result closeCallback = {this.closeResult.bind(this)}/>
-            </div>
-
             
-
             <img
               className="btn"
               onMouseOver={this.mouseOver}
@@ -116,9 +106,46 @@ class Search extends Component {
                 </select>
               </label>
               <input className="submit button2" type="submit" value="Submit" />
-              <i className="disclaimer">Disclaimer: We love sloths</i>
+              
+      
+
             </form>
+
+            <div>
+                {
+                  // this.state.resultOpen ? <form 
+                  //                           className = "answer2" isOpen = {this.state.resultOpen}
+                                             
+                  //                         >
+                  //                         </form> : null
+                  this.state.resultOpen? <Transition
+                  items = {this.state.resultOpen}
+                  from = {{oppacity: 0}}
+                  enter = {{oppacity: 1}}
+                  leave = {{oppacity: 0}}
+                  >
+                    
+                  {show => show &&(props => (
+                    <animated.div style = {props}>
+                      <Answer/>
+                    </animated.div>
+                  ))}
+                  </Transition>:null
+                }
+
+                <button onClick={()=>
+                  {this.setState({resultOpen:!this.state.resultOpen})}} class="answerButton">Toggle Me
+                </button>
+
+            </div>
+
+
+                
           </div>
+
+
+          
+
       </body>
     );
   }

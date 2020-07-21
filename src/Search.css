@@ -36,9 +36,9 @@ body {
   font-family: 'Aldrich';
   color:#C4C4C4;
   -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  
+  transition-duration: 0.4s; 
 }
+
 .button2:hover {
   cursor: pointer;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
@@ -170,14 +170,24 @@ header {
   color: #FFFFFF;
 }
 
-.resultRectangle {
+.answerButton{
+  position: absolute;
+  width: 144px;
+  height: 39px;
+  left: 173px;
+  top: 554px;
+  font-family: 'Aldrich';
+  align-content: center;
+}
+
+.answer2 {
   display: flex;
   background: blue;
   position: absolute;
   align-items: center;
   justify-content: center;
   margin: auto;
-  width: 400px;
+  width: 300px;
   height: 100%;
   left: 522px;
   top: 0px;

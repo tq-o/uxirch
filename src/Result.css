@@ -1,3 +1,17 @@
 .hi {
     padding: .5rem 15px;
   }
+
+.resultRectangle {
+    display: flex;
+    background: blue;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 400px;
+    height: 100%;
+    left: 522px;
+    top: 0px;
+    
+  }
