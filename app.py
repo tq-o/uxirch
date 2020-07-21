@@ -2,7 +2,7 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
-
+import json
 from flask import Flask
 app = Flask(__name__)
 

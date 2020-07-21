@@ -2,17 +2,22 @@ import React, { Component, useContext} from "react";
 import "./Search.css";
 import instbtn from "./img/inst-btn.png";
 import Answer from './Answer';
-import {Transition,animated} from 'react-spring'
+import {Transition} from 'react-spring/renderprops'
 
 class Search extends Component {
   
   constructor(props) {
     super(props);
     this.state = {
-      cat1: "grapefruit",
-      cat2: "grapefruit",
-      cat3: "grapefruit",
-      resultOpen: true,
+      // cat1: "grapefruit",
+      // cat2: "grapefruit",
+      // cat3: "grapefruit",
+      cat: {
+        cat1: "grapefruit",
+        cat2: "grapefruit",
+        cat3: "grapefruit",
+      },
+      resultOpen: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -34,6 +39,10 @@ class Search extends Component {
         "," +
         this.state.cat3
     );
+
+    
+    const writeJsonFile = require('write-json-file');
+    
     event.preventDefault();
   }
 
@@ -112,32 +121,29 @@ class Search extends Component {
             </form>
 
             <div>
-                {
+                {/* {
                   // this.state.resultOpen ? <form 
                   //                           className = "answer2" isOpen = {this.state.resultOpen}
                                              
                   //                         >
                   //                         </form> : null
-                  this.state.resultOpen? <Transition
-                  items = {this.state.resultOpen}
-                  from = {{oppacity: 0}}
-                  enter = {{oppacity: 1}}
-                  leave = {{oppacity: 0}}
-                  >
-                    
-                  {show => show &&(props => (
-                    <animated.div style = {props}>
-                      <Answer/>
-                    </animated.div>
-                  ))}
-                  </Transition>:null
-                }
+                  this.state.resultOpen? <Answer/>:null
+                } */}
+                <Transition
+                  items={this.state.resultOpen}
+                  from={{ opacity: 0 }}
+                  enter={{ opacity: 1 }}
+                  leave={{ opacity: 0 }}>
+                  {show => show && (props => <div style={props}><from className = "answer2"></from><Answer/></div>)}
+                </Transition>
 
                 <button onClick={()=>
                   {this.setState({resultOpen:!this.state.resultOpen})}} class="answerButton">Toggle Me
                 </button>
 
             </div>
+
+            
 
 
                 
@@ -150,5 +156,7 @@ class Search extends Component {
     );
   }
 }
+
+
 
 export default Search;
