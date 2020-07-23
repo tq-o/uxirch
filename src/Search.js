@@ -1,13 +1,15 @@
-import React, { Component, useContext} from "react";
+import React, { Component, useContext, useState, useEffect} from "react";
 import "./Search.css";
 import instbtn from "./img/inst-btn.png";
 import Answer from './Answer';
-import {Transition} from 'react-spring/renderprops'
+import {Transition} from 'react-spring/renderprops';
+import './foo.json';
+import TimeDisplay from "./Time";
 
 class Search extends Component {
-  
   constructor(props) {
     super(props);
+
     this.state = {
       // cat1: "grapefruit",
       // cat2: "grapefruit",
@@ -25,23 +27,24 @@ class Search extends Component {
     this.mouseOver = this.mouseOver.bind(this);
   }
 
+
   handleChange(event) {
     // this.setState({cat1: event.target.value});
     this.setState({ [event.target.name]: event.target.value });
   }
 
   handleSubmit(event) {
+
     alert(
       "Your favorite flavor is: " +
         this.state.cat1 +
         "," +
         this.state.cat2 +
         "," +
-        this.state.cat3
+        this.state.cat3 
     );
-
-    
-    const writeJsonFile = require('write-json-file');
+  
+    // writeJsonFile('foo.json', {"foo": true});
     
     event.preventDefault();
   }
@@ -49,8 +52,6 @@ class Search extends Component {
   mouseOver(event) {
     alert("Hi");
   }
-
-
 
   render() {
 
@@ -136,7 +137,7 @@ class Search extends Component {
                   leave={{ opacity: 0 }}>
                   {show => show && (props => <div style={props}><from className = "answer2"></from><Answer/></div>)}
                 </Transition>
-
+                <TimeDisplay/>
                 <button onClick={()=>
                   {this.setState({resultOpen:!this.state.resultOpen})}} class="answerButton">Toggle Me
                 </button>
@@ -156,7 +157,5 @@ class Search extends Component {
     );
   }
 }
-
-
 
 export default Search;
